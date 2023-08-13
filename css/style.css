@@ -112,7 +112,7 @@ ul{
 
 .eleetcontroller-main-header{
     width: 100%;
-    padding: 18px 10px;
+    /* padding: 18px 10px; */
     border-bottom: 2px solid #E31E21;
     background: var(--header-background);
     color: var(--header-heading-color);
@@ -157,6 +157,8 @@ ul{
     display: inline-block;
     margin: 0 16px;
     transition: 1s;
+    padding: 2rem 0;
+    /* position: relative; */
 }
 
 
@@ -173,7 +175,7 @@ ul{
 
 .eleetcontroller-header-nav li:hover a::after{
     position: absolute;
-    bottom: -30px;
+    bottom: -26px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -193,12 +195,33 @@ ul{
     background-color: #fff;
     display: block;
     position: absolute;
-    bottom: -29px;
+    bottom: -26px;
     left: 0;
     border-radius: 2px;
 }
 
-
+.eleetcontroller-header-nav li:hover .eleetcontroller-header-popup{
+    visibility: visible;
+    opacity: 1;
+}
+.eleetcontroller-header-popup{
+    position: absolute;
+    left: 0;
+    top: 105%;
+    width: 100%;
+    /* background-color: #fff; */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.eleetcontroller-header-popup ul{
+    text-align: center;
+    border-bottom: 1px solid #fff;
+    background-color: #1d1d1b;
+}
+.eleetcontroller-header-popup a:after{
+    display: none;
+}
 .eleetcontroller-list-cart{
     display: flex;
     align-items: center;
