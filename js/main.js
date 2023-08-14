@@ -56,3 +56,20 @@ searchClose.addEventListener("click", () => {
         classSearch.classList.remove("eleetcontroller-showSearch");
    }
 });
+
+
+$(document).ready(function() {
+    $(window).scroll(function() {
+        var scrollPos = $(window).scrollTop();
+        var targetElement = $('.eleetcontroller-main-header');
+
+        // Adjust the value (300 in this case) based on when you want the class to be added
+        if (scrollPos > 40 ) {
+        targetElement.addClass('eleetcontroller-scrolled');
+        } else {
+        targetElement.removeClass('eleetcontroller-scrolled');
+        }
+    });
+});
+
+// eleetcontroller-main-header

@@ -113,14 +113,18 @@ ul{
 .eleetcontroller-main-header{
     width: 100%;
     /* padding: 18px 10px; */
-    border-bottom: 2px solid #E31E21;
+    border-bottom: 2px solid #f86b08;
     background: var(--header-background);
     color: var(--header-heading-color);
     transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0 5px 20px black;
     position: relative;
 }
+.eleetcontroller-scrolled{
+    position: fixed;
+    top: 0;
 
+}
 .eleetcontroller-header-wrapper{
     display: flex;
     align-items: center;
@@ -170,6 +174,7 @@ ul{
     margin: 0 16px;
     transition: all 0.3s ease;
     padding: 2rem 0;
+    position: relative;
 }
 
 
@@ -222,27 +227,69 @@ ul{
     transform: translateX(0);
 }
 
-.eleetcontroller-header-nav li:hover .eleetcontroller-header-popup{
+/* =================== Dropdown Menu =============== */
+.eleetcontroller-header-nav li ul{
+    position: absolute;
+    background-color: #000;
+    visibility: hidden;
+    opacity: 0;
+    top: 5rem;
+}
+.eleetcontroller-header-nav li ul li{
+    width: 100%;
+    display: inline-block;
+}
+.eleetcontroller-header-nav li ul li a::after{
+    display: none;
+}
+.eleetcontroller-header-nav li:hover > ul{
     visibility: visible;
     opacity: 1;
+}
+
+/* ============== Inner Dropdown ================== */
+.eleetcontroller-header-nav li ul li ul{
+    position: absolute;
+    left: 87%;
+    top: 0;
+    width: 100%;
+    display: inline-block;
+
+}
+.eleetcontroller-header-nav li ul li:hover > ul{
+    visibility: visible;
+    opacity: 1;
+}
+/* ============ End of Dropdown menu ================= */
+
+
+
+
+.eleetcontroller-header-nav li:hover .eleetcontroller-header-popup ul{
+    visibility: visible;
+    opacity: 1;
+    top: 0;
 }
 .eleetcontroller-header-nav span{
     display: none;
 }
 .eleetcontroller-header-popup{
     position: absolute;
-    left: 0;
+    left: -100vw;
     top: 105%;
-    width: 100%;
-    /* background-color: #fff; */
-    visibility: hidden;
-    opacity: 0;
+    width: 200vw;
+    /* visibility: hidden; */
+    /* opacity: 0; */
     transition: all 0.3s ease;
 }
 .eleetcontroller-header-popup ul{
     text-align: center;
     border-bottom: 1px solid #fff;
     background-color: #1d1d1b;
+    width: 100%;
+}
+.eleetcontroller-header-popup ul li{
+    width: unset!important;
 }
 .eleetcontroller-header-popup a:after{
     display: none;
